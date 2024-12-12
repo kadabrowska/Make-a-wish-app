@@ -1,0 +1,6 @@
+@MakeAWishApp_HostAddress = http://localhost:5287
+
+GET {{MakeAWishApp_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

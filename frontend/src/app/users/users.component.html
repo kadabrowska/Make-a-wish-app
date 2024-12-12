@@ -1,0 +1,31 @@
+
+<h3> Choose someone from the list </h3>
+
+<div *ngIf="users.length === 0">
+    <p>No users available</p>
+</div>
+
+<table *ngIf="users.length > 0" class="users-table">
+    <thead>
+        <tr>
+            <th></th>
+            <th>Name</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users">
+            <td> {{currentUserId == user.id ? 'You -' : '' }} 
+                {{currentUserId == user.giverId ? 'Your choice -' : ''}} 
+            </td>
+            <td> {{ user.username }} </td>
+            <td> {{user.giverId ? 'Assigned' : 'Available'}}</td>
+            <td>
+                <button
+                (click)="assign(user.id)"
+                [hidden]="user.giverId == currentUserId || user.id == currentUserId">Choose</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
