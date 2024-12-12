@@ -4,7 +4,7 @@
 <div *ngIf="users.length === 0">
     <p>No users available</p>
 </div>
-
+<div class="table-container">
 <table *ngIf="users.length > 0" class="users-table">
     <thead>
         <tr>
@@ -15,7 +15,7 @@
     </thead>
     <tbody>
         <tr *ngFor="let user of users">
-            <td> {{currentUserId == user.id ? 'You -' : '' }} 
+            <td class="first-col"> {{currentUserId == user.id ? 'You -' : '' }} 
                 {{currentUserId == user.giverId ? 'Your choice -' : ''}} 
             </td>
             <td> {{ user.username }} </td>
@@ -28,4 +28,5 @@
         </tr>
     </tbody>
 </table>
+</div>
 

@@ -1,0 +1,9 @@
+<body>
+    <div>
+    <header>Make a wish app</header>
+    <div *ngIf="isLoggedIn()" class="logout">
+        <button (click)="logout()">Logout</button>
+    </div>
+    </div>
+    <router-outlet></router-outlet>
+    </body>

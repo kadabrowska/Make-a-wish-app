@@ -40,4 +40,9 @@ export class AuthService {
             if(token)
                 this.setUserIdFromToken(token);
         }
+
+        logout(): void {
+            localStorage.removeItem('authToken');
+            localStorage.removeItem('userId');
+        }
     };
